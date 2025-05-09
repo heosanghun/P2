@@ -1,0 +1,58 @@
+2025-05-09 19:52:07,289 - EnsembleController - INFO - 앙상블 컨트롤러 초기화 완료
+2025-05-09 19:52:07,289 - EnsembleController - INFO - 앙상블 거래 시뮬레이션 시작
+2025-05-09 19:52:07,289 - EnsembleController - INFO - BTCUSDT 트레이딩 시뮬레이션 시작
+2025-05-09 19:52:07,292 - EnsembleController - INFO - 799개의 1d 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\1d
+2025-05-09 19:52:07,429 - EnsembleController - INFO - BTCUSDT 1d 데이터 로드 완료: 799개 항목
+2025-05-09 19:52:07,439 - EnsembleController - INFO - 4789개의 4h 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\4h
+2025-05-09 19:52:08,269 - EnsembleController - INFO - BTCUSDT 4h 데이터 로드 완료: 4789개 항목
+2025-05-09 19:52:08,306 - EnsembleController - INFO - 19152개의 1h 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\1h
+2025-05-09 19:52:11,640 - EnsembleController - INFO - BTCUSDT 1h 데이터 로드 완료: 19152개 항목
+2025-05-09 19:52:11,712 - EnsembleController - INFO - 38303개의 30m 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\30m
+2025-05-09 19:52:18,746 - EnsembleController - INFO - BTCUSDT 30m 데이터 로드 완료: 38303개 항목
+2025-05-09 19:52:18,990 - EnsembleController - INFO - 76604개의 15m 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\15m
+2025-05-09 19:52:33,078 - EnsembleController - INFO - BTCUSDT 15m 데이터 로드 완료: 76604개 항목
+2025-05-09 19:52:33,516 - EnsembleController - INFO - 229809개의 5m 이미지 파일 발견: D:\drl-candlesticks-trader-main1\data\chart\5m
+2025-05-09 19:53:13,411 - EnsembleController - INFO - BTCUSDT 5m 데이터 로드 완료: 229809개 항목
+2025-05-09 19:53:13,434 - EnsembleController - WARNING - 뉴스 데이터 경로를 찾을 수 없습니다: D:\drl-candlesticks-trader-main1\paper1\data\news\cryptonews_2021-10-12_2023-12-19
+2025-05-09 19:53:13,434 - EnsembleController - INFO - 샘플 뉴스 데이터 생성
+2025-05-09 19:53:13,434 - EnsembleController - ERROR - BTCUSDT 뉴스 데이터 로드 중 오류 발생: 'start_date'
+Traceback (most recent call last):
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 468, in _load_all_timeframes_news
+    news_data_dict[timeframe] = self._generate_sample_news_data(symbol)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 488, in _generate_sample_news_data
+    start_date = pd.to_datetime(self.config['start_date'])
+                                ~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'start_date'
+2025-05-09 19:53:13,435 - EnsembleController - ERROR - BTCUSDT 트레이딩 시뮬레이션 중 오류 발생: 'start_date'
+Traceback (most recent call last):
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 468, in _load_all_timeframes_news
+    news_data_dict[timeframe] = self._generate_sample_news_data(symbol)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 488, in _generate_sample_news_data
+    start_date = pd.to_datetime(self.config['start_date'])
+                                ~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'start_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 166, in run_trading_simulation
+    all_timeframes_news = self._load_all_timeframes_news(symbol)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 474, in _load_all_timeframes_news
+    news_data_dict[timeframe] = self._generate_sample_news_data(symbol)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 488, in _generate_sample_news_data
+    start_date = pd.to_datetime(self.config['start_date'])
+                                ~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'start_date'
+2025-05-09 19:53:13,437 - EnsembleController - ERROR - 성능 보고서 생성 중 오류 발생: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\drl-candlesticks-trader-main1\paper2\ensemble_controller.py", line 879, in _generate_performance_report
+    for symbol, result in combined_result['symbol_results'].items():
+                          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-05-09 19:53:13,438 - EnsembleController - INFO - 앙상블 거래 시뮬레이션 완료
+2025-05-09 19:53:13,440 - EnsembleController - INFO - 성능 지표 저장 완료: D:\drl-candlesticks-trader-main1\paper2\results\run_20250509_195207\performance_history.json
+2025-05-09 19:53:13,440 - EnsembleController - INFO - 앙상블 가중치 저장 완료: D:\drl-candlesticks-trader-main1\paper2\results\run_20250509_195207\ensemble_weights.json
